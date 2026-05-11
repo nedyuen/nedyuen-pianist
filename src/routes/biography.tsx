@@ -22,8 +22,8 @@ function BiographyPage() {
     <PageShell>
       <PageHeader
         eyebrow="Biography"
-        title="A life shaped by listening."
-        intro="From a small village in the Cotswolds to the great stages of Europe and North America — the long, deliberate becoming of a musician."
+        title="Awards and accolades."
+        intro="A journey from early competition success to television acclaim and community contribution."
       />
 
       <section className="py-24 md:py-32">

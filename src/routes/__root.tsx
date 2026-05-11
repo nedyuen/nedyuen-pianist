@@ -72,14 +72,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
+      { title: "Ned Yuen - Classical Pianist" },
+      { name: "description", content: "A luxury minimalist website for a professional classical concert pianist, showcasing artistic prestige and immersive experiences." },
       { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { property: "og:title", content: "Ned Yuen - Classical Pianist" },
+      { property: "og:description", content: "A luxury minimalist website for a professional classical concert pianist, showcasing artistic prestige and immersive experiences." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "Ned Yuen - Classical Pianist" },
+      { name: "twitter:description", content: "A luxury minimalist website for a professional classical concert pianist, showcasing artistic prestige and immersive experiences." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/11f69525-97bd-4dbe-9210-de1e0c164166/id-preview-6a782075--0daa92a9-5196-4075-8fbe-73c04add9daf.lovable.app-1778493390134.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/11f69525-97bd-4dbe-9210-de1e0c164166/id-preview-6a782075--0daa92a9-5196-4075-8fbe-73c04add9daf.lovable.app-1778493390134.png" },
     ],
     links: [
       {

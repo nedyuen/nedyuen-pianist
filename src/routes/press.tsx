@@ -4,9 +4,9 @@ import { PageShell, PageHeader } from "@/components/site/PageShell";
 export const Route = createFileRoute("/press")({
   head: () => ({
     meta: [
-      { title: "Press & Recognition — Adrian Vance" },
+      { title: "Press & Recognition — Ned Yuen" },
       { name: "description", content: "Critical reception, awards, and distinctions across a decade of performances and recordings." },
-      { property: "og:title", content: "Press & Recognition — Adrian Vance" },
+      { property: "og:title", content: "Press & Recognition — Ned Yuen" },
       { property: "og:description", content: "Critical reception and awards." },
     ],
   }),

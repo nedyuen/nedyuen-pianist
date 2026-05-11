@@ -12,9 +12,9 @@ import { Play } from "lucide-react";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Adrian Vance — Concert Pianist" },
-      { name: "description", content: "Adrian Vance, internationally acclaimed classical concert pianist. Performances, recordings, and tour dates." },
-      { property: "og:title", content: "Adrian Vance — Concert Pianist" },
+      { title: "Ned Yuen — Concert Pianist" },
+      { name: "description", content: "Ned Yuen, internationally acclaimed classical concert pianist. Performances, recordings, and tour dates." },
+      { property: "og:title", content: "Ned Yuen — Concert Pianist" },
       { property: "og:description", content: "Internationally acclaimed classical concert pianist." },
     ],
   }),
@@ -82,7 +82,7 @@ function HomePage() {
               it sings. To play is not to perform; it is to listen, very carefully, to
               centuries of voices, and to let them through.
             </p>
-            <p className="mt-10 text-sm tracking-[0.28em] uppercase text-muted-foreground">— Adrian Vance</p>
+            <p className="mt-10 text-sm tracking-[0.28em] uppercase text-muted-foreground">— Ned Yuen</p>
           </div>
         </div>
       </section>

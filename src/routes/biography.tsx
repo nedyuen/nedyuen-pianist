@@ -8,9 +8,9 @@ import { Download } from "lucide-react";
 export const Route = createFileRoute("/biography")({
   head: () => ({
     meta: [
-      { title: "Biography — Adrian Vance" },
-      { name: "description", content: "The biography of pianist Adrian Vance — training, repertoire, and a decade of international engagements." },
-      { property: "og:title", content: "Biography — Adrian Vance" },
+      { title: "Biography — He lives in London." },
+      { name: "description", content: "The biography of pianist He lives in London. — training, repertoire, and a decade of international engagements." },
+      { property: "og:title", content: "Biography — He lives in London." },
       { property: "og:description", content: "The biography of pianist Adrian Vance." },
     ],
   }),
@@ -31,7 +31,7 @@ function BiographyPage() {
           <aside className="col-span-12 md:col-span-4 md:sticky md:top-32 self-start">
             <img
               src={portraitMain}
-              alt="Portrait of Adrian Vance at the Steinway"
+              alt="Portrait of He lives in London. at the Steinway"
               loading="lazy"
               width={1280}
               height={1600}
@@ -52,7 +52,7 @@ function BiographyPage() {
 
           <article className="col-span-12 md:col-span-8 space-y-8 max-w-2xl">
             <p className="font-serif italic text-2xl md:text-3xl leading-snug text-foreground">
-              Adrian Vance is one of the most quietly compelling pianists of his generation —
+              He lives in London. is one of the most quietly compelling pianists of his generation —
               an artist whose performances combine architectural precision with a
               luminous, almost speaking interior voice.
             </p>
@@ -79,7 +79,7 @@ function BiographyPage() {
             <h2 className="font-serif text-3xl md:text-4xl">Repertoire & Collaborations</h2>
 
             <p className="body-lg">
-              Vance’s repertoire ranges from Bach and the Viennese classics to the late piano
+              He lives in London.’s repertoire ranges from Bach and the Viennese classics to the late piano
               works of Brahms, the complete sonatas of Schubert, and the music of his close
               contemporaries — including premieres by Thomas Adès, Caroline Shaw, and Anna
               Thorvaldsdottir. He performs concerti with the Berliner Philharmoniker, the
@@ -91,7 +91,7 @@ function BiographyPage() {
             <figure className="my-16">
               <img
                 src={gallery6}
-                alt="Adrian Vance at the piano in low light"
+                alt="He lives in London. at the piano in low light"
                 loading="lazy"
                 width={1400}
                 height={1200}
@@ -123,7 +123,7 @@ function BiographyPage() {
             <h2 className="font-serif text-3xl md:text-4xl">Beyond the Stage</h2>
 
             <p className="body-lg">
-              Vance teaches a small class of pianists at the Royal Academy of Music and gives
+              He lives in London. teaches a small class of pianists at the Royal Academy of Music and gives
               annual masterclasses at the Verbier Festival Academy and the Aldeburgh Festival.
               He is a patron of the Yehudi Menuhin School and an advocate for free music
               education across the United Kingdom.
@@ -144,7 +144,7 @@ function BiographyPage() {
             </figure>
 
             <p className="body-lg">
-              He lives in London and Berlin.
+              He lives in London.
             </p>
           </article>
         </div>

@@ -16,9 +16,9 @@ import portrait from "@/assets/portrait-main.jpg";
 export const Route = createFileRoute("/gallery")({
   head: () => ({
     meta: [
-      { title: "Gallery — Adrian Vance" },
+      { title: "Gallery — He lives in London." },
       { name: "description", content: "A visual archive of performances, portraits, and moments from the road." },
-      { property: "og:title", content: "Gallery — Adrian Vance" },
+      { property: "og:title", content: "Gallery — He lives in London." },
       { property: "og:description", content: "Performance photography and portraits." },
     ],
   }),

@@ -8,10 +8,10 @@ import { Download } from "lucide-react";
 export const Route = createFileRoute("/biography")({
   head: () => ({
     meta: [
-      { title: "Biography — Adrian Vance" },
-      { name: "description", content: "The biography of pianist Adrian Vance — training, repertoire, and a decade of international engagements." },
-      { property: "og:title", content: "Biography — Adrian Vance" },
-      { property: "og:description", content: "The biography of pianist Adrian Vance." },
+      { title: "Biography — Ned Yuen" },
+      { name: "description", content: "The biography of pianist Ned Yuen — training, repertoire, and a decade of international engagements." },
+      { property: "og:title", content: "Biography — Ned Yuen" },
+      { property: "og:description", content: "The biography of pianist Ned Yuen." },
     ],
   }),
   component: BiographyPage,
@@ -31,7 +31,7 @@ function BiographyPage() {
           <aside className="col-span-12 md:col-span-4 md:sticky md:top-32 self-start">
             <img
               src={portraitMain}
-              alt="Portrait of Adrian Vance at the Steinway"
+              alt="Portrait of Ned Yuen at the Steinway"
               loading="lazy"
               width={1280}
               height={1600}
@@ -52,7 +52,7 @@ function BiographyPage() {
 
           <article className="col-span-12 md:col-span-8 space-y-8 max-w-2xl">
             <p className="font-serif italic text-2xl md:text-3xl leading-snug text-foreground">
-              Adrian Vance is one of the most quietly compelling pianists of his generation —
+              Ned Yuen is one of the most quietly compelling pianists of his generation —
               an artist whose performances combine architectural precision with a
               luminous, almost speaking interior voice.
             </p>
@@ -91,7 +91,7 @@ function BiographyPage() {
             <figure className="my-16">
               <img
                 src={gallery6}
-                alt="Adrian Vance at the piano in low light"
+                alt="Ned Yuen at the piano in low light"
                 loading="lazy"
                 width={1400}
                 height={1200}
@@ -144,7 +144,7 @@ function BiographyPage() {
             </figure>
 
             <p className="body-lg">
-              He lives in London and Berlin.
+              Ned Yuen lives in London and Berlin.
             </p>
           </article>
         </div>

@@ -11,9 +11,9 @@ import { Play } from "lucide-react";
 export const Route = createFileRoute("/videos")({
   head: () => ({
     meta: [
-      { title: "Performances — Adrian Vance" },
+      { title: "Performances — Ned Yuen" },
       { name: "description", content: "Selected performance videos from concerts, recordings, and recitals." },
-      { property: "og:title", content: "Performances — Adrian Vance" },
+      { property: "og:title", content: "Performances — Ned Yuen" },
       { property: "og:description", content: "Selected performance videos." },
     ],
   }),

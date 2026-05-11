@@ -46,8 +46,8 @@ function HomePage() {
         <div className="relative z-10 h-full mx-auto max-w-[1600px] px-6 md:px-12 flex flex-col justify-end pb-24 md:pb-32 text-[color:var(--ivory)]">
           <p className="eyebrow-gold fade-in">Pianist · Recitalist · Recording Artist</p>
           <h1 className="display-xl mt-6 fade-up fade-delay-1">
-            Adrian<br />
-            <span className="italic font-light">Vance</span>
+            Ned<br />
+            <span className="italic font-light">Yuen</span>
           </h1>
           <p className="mt-10 max-w-xl text-base md:text-lg font-light leading-relaxed text-white/85 fade-up fade-delay-2">
             A pianist of restrained intensity and architectural clarity — known for performances

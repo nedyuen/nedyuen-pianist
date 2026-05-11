@@ -58,94 +58,104 @@ function BiographyPage() {
             </p>
 
             <p className="body-lg">
-              Born in Gloucestershire in 1989, Vance began his studies at the age of six with
-              the British pianist Margaret Foulkes, before continuing at the Royal Academy of
-              Music with Christopher Elton and, later, at the Hochschule für Musik Hanns Eisler
-              in Berlin with Andrei Gavrilov. He has spoken often of those early years as a long
-              apprenticeship in patience — “learning to wait for the music, rather than
-              announcing it.”
+              Ned began studying the piano at the age of three. His principal teachers included 
+              Richard Uttley and Mary Wu, and he later attended a masterclass given by 
+              internationally acclaimed pianist Lang Lang.
             </p>
 
             <p className="body-lg">
-              He came to broader international attention in 2019 with First Prize at the Leeds
-              International Piano Competition, where the jury cited his “rare combination of
-              intellectual rigour and emotional restraint.” In the seasons that followed, he
-              made acclaimed debuts at Wigmore Hall, the Concertgebouw, Carnegie Hall, the
-              Salle Pleyel, and the Musikverein.
+              Throughout his musical development, Ned received numerous awards and distinctions. 
+              He was a First Prize winner at the Rochester Music Festival, Devon Performing Arts Festival, 
+              St Cecilia International Music Challenge, Hong Kong Schools Music Festival, 
+              Hong Kong District Music Competition, and Concord Talent Show. He was also awarded 
+              the Kathleen Rose, Rose Sears Cup, Susan Hinde Cup, RMKMD Gold Model, SMSA Gold Medal, 
+              and the Harry Ore Memorial Prize in Music.
             </p>
 
             <div className="hairline my-12" />
 
-            <h2 className="font-serif text-3xl md:text-4xl">Repertoire & Collaborations</h2>
+            <h2 className="font-serif text-3xl md:text-4xl">Public & TV Performances</h2>
 
             <p className="body-lg">
-              Vance’s repertoire ranges from Bach and the Viennese classics to the late piano
-              works of Brahms, the complete sonatas of Schubert, and the music of his close
-              contemporaries — including premieres by Thomas Adès, Caroline Shaw, and Anna
-              Thorvaldsdottir. He performs concerti with the Berliner Philharmoniker, the
-              London Symphony, the Orchestre de Paris, the Cleveland Orchestra, and the
-              Mariinsky, working closely with conductors including Kirill Petrenko, Simon
-              Rattle, Esa-Pekka Salonen, and Mirga Gražinytė-Tyla.
+              Ned was frequently invited to perform as a soloist at festivals and gala events, 
+              including the Hong Kong Winterfest (2004–2006), the Hong Kong Schools Music Festival Winners’ Concert (2007), 
+              the Hong Kong District Arts Festival Opening Ceremony (2007), the BBC Radio 3 Pianothon (2008), 
+              St Chad’s Church Concerts in the Round (2009–2010), and the Devon Performing Arts Festival Gala Concert (2013). 
+              He also appeared regularly in charity concerts, Christmas performances, and high-profile corporate events, 
+              including the UBS Education Conference and the UBS New Building Inauguration Ceremony (2017).
+            </p>
+
+            <p className="body-lg">
+              Ned has also made numerous television and radio appearances, with performances and 
+              interviews broadcast on major networks including TVB, ATV, RTHK, and ETV. 
+              Notable appearances included the Jade Solid Gold Best Ten Music Awards Presentation, 
+              the Cathay Pacific International Chinese New Year Night Parade, and the Miss Hong Kong Pageant.
+            </p>
+
+            <p className="body-lg">
+              More recently, Ned was selected to participate in <em>The Piano</em>, the acclaimed 
+              Channel 4 series showcasing outstanding amateur pianists across the United Kingdom. 
+              As part of the programme, he was interviewed by Claudia Winkleman, performed publicly 
+              at a major railway station venue, and appeared alongside internationally renowned 
+              musicians Lang Lang and Mika.
             </p>
 
             <figure className="my-16">
               <img
                 src={gallery6}
-                alt="Ned Yuen at the piano in low light"
+                alt="Ned Yuen rehearsal"
                 loading="lazy"
                 width={1400}
                 height={1200}
                 className="w-full aspect-[7/6] object-cover"
               />
               <figcaption className="mt-3 text-[10px] tracking-[0.3em] uppercase text-muted-foreground">
-                Rehearsal · Philharmonie de Paris · 2023
+                REHEARSAL · PHILHARMONIE DE PARIS · 2023
               </figcaption>
             </figure>
 
-            <h2 className="font-serif text-3xl md:text-4xl">Recordings</h2>
+            <h2 className="font-serif text-3xl md:text-4xl">Early Years & Collaborations</h2>
 
             <p className="body-lg">
-              His discography on Deutsche Grammophon includes a 2021 recording of Schubert’s
-              final three sonatas — awarded the Gramophone Editor’s Choice and Diapason d’Or —
-              and a 2024 album devoted to Brahms’s Op. 116–119, described in The Guardian as
-              “a recording for those who like their Brahms inward, autumnal, and unhurried.”
+              During his school years, Ned was recognised as one of the institution’s leading 
+              young musicians. In addition to representing the college in the BBC Shropshire 
+              Musician of the Year Concerto Competition, he performed Haydn’s Piano Concerto No. 11 
+              at the International Mayors Concert celebrating the school’s 60th anniversary. 
+              In recognition of his musical achievements and contributions to school life, 
+              he was awarded Student of the Year in 2010.
             </p>
 
             <p className="body-lg">
-              Recent and forthcoming projects include the complete Beethoven sonatas across
-              eight recitals at Wigmore Hall, a Ravel cycle with the Orchestre de Paris, and
-              a duo project with violinist Lisa Batiashvili exploring the Schumann–Brahms
-              correspondence.
+              Alongside his work as a solo pianist, Ned collaborated extensively with choirs, 
+              ensembles, and orchestras. He served as pianist for the Boheme Youth Choir, 
+              Concord Choir, Concord Ensemble, La Salle Senior Choir, and La Salle String Orchestra. 
+              He also participated in theatrical productions including <em>Touching Hearts: St La Salle Musical</em> 
+              (world premiere) and <em>Les Misérables</em> (School Edition).
             </p>
 
             <div className="hairline my-12" />
 
-            <h2 className="font-serif text-3xl md:text-4xl">Beyond the Stage</h2>
+            <h2 className="font-serif text-3xl md:text-4xl">Beyond the Piano</h2>
 
             <p className="body-lg">
-              Vance teaches a small class of pianists at the Royal Academy of Music and gives
-              annual masterclasses at the Verbier Festival Academy and the Aldeburgh Festival.
-              He is a patron of the Yehudi Menuhin School and an advocate for free music
-              education across the United Kingdom.
+              Beyond the piano, Ned is a multi-instrumentalist and has performed on the 
+              violin, viola, harmonica, melodica, and recorder. Since 2002, he has also 
+              held a Guinness World Record as part of the world’s largest percussion ensemble.
             </p>
 
             <figure className="my-16">
               <img
                 src={gallery2}
-                alt="Pianist in black and white profile at the piano"
+                alt="Ned Yuen studio"
                 loading="lazy"
                 width={1200}
                 height={1500}
                 className="w-full aspect-[4/5] object-cover"
               />
               <figcaption className="mt-3 text-[10px] tracking-[0.3em] uppercase text-muted-foreground">
-                Studio · London · 2024
+                STUDIO · LONDON · 2024
               </figcaption>
             </figure>
-
-            <p className="body-lg">
-              Ned Yuen lives in London and Berlin.
-            </p>
           </article>
         </div>
       </section>

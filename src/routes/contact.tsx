@@ -5,9 +5,9 @@ import { PageShell, PageHeader } from "@/components/site/PageShell";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — He lives in London." },
+      { title: "Contact — Adrian Vance" },
       { name: "description", content: "Management, booking, press, and general enquiries." },
-      { property: "og:title", content: "Contact — He lives in London." },
+      { property: "og:title", content: "Contact — Adrian Vance" },
       { property: "og:description", content: "Management and booking enquiries." },
     ],
   }),
@@ -56,7 +56,7 @@ function ContactPage() {
             <div>
               <p className="eyebrow-gold">Press & Publicity</p>
               <h3 className="font-serif text-2xl mt-5">Rebecca Liu</h3>
-              <a href="mailto:press@helivesinlondon.com" className="link-underline mt-3 inline-block text-sm">
+              <a href="mailto:press@adrianvance.com" className="link-underline mt-3 inline-block text-sm">
                 press@adrianvance.com
               </a>
             </div>

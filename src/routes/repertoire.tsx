@@ -6,9 +6,9 @@ import { Plus, Minus } from "lucide-react";
 export const Route = createFileRoute("/repertoire")({
   head: () => ({
     meta: [
-      { title: "Repertoire — He lives in London." },
+      { title: "Repertoire — Adrian Vance" },
       { name: "description", content: "A working repertoire — solo, concerto, chamber, and contemporary works." },
-      { property: "og:title", content: "Repertoire — He lives in London." },
+      { property: "og:title", content: "Repertoire — Adrian Vance" },
       { property: "og:description", content: "A working repertoire across solo, concerto, chamber, and contemporary music." },
     ],
   }),

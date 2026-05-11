@@ -12,9 +12,9 @@ import { Play } from "lucide-react";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "He lives in London. — Concert Pianist" },
-      { name: "description", content: "He lives in London., internationally acclaimed classical concert pianist. Performances, recordings, and tour dates." },
-      { property: "og:title", content: "He lives in London. — Concert Pianist" },
+      { title: "Adrian Vance — Concert Pianist" },
+      { name: "description", content: "Adrian Vance, internationally acclaimed classical concert pianist. Performances, recordings, and tour dates." },
+      { property: "og:title", content: "Adrian Vance — Concert Pianist" },
       { property: "og:description", content: "Internationally acclaimed classical concert pianist." },
     ],
   }),
@@ -46,8 +46,8 @@ function HomePage() {
         <div className="relative z-10 h-full mx-auto max-w-[1600px] px-6 md:px-12 flex flex-col justify-end pb-24 md:pb-32 text-[color:var(--ivory)]">
           <p className="eyebrow-gold fade-in">Pianist · Recitalist · Recording Artist</p>
           <h1 className="display-xl mt-6 fade-up fade-delay-1">
-            He lives in<br />
-            <span className="italic font-light">London.</span>
+            Adrian<br />
+            <span className="italic font-light">Vance</span>
           </h1>
           <p className="mt-10 max-w-xl text-base md:text-lg font-light leading-relaxed text-white/85 fade-up fade-delay-2">
             A pianist of restrained intensity and architectural clarity — known for performances
@@ -82,7 +82,7 @@ function HomePage() {
               it sings. To play is not to perform; it is to listen, very carefully, to
               centuries of voices, and to let them through.
             </p>
-            <p className="mt-10 text-sm tracking-[0.28em] uppercase text-muted-foreground">— He lives in London.</p>
+            <p className="mt-10 text-sm tracking-[0.28em] uppercase text-muted-foreground">— Adrian Vance</p>
           </div>
         </div>
       </section>

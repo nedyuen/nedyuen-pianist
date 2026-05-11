@@ -6,7 +6,7 @@ export function SiteFooter() {
       <div className="mx-auto max-w-[1600px] px-6 md:px-12 py-24">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8">
           <div className="md:col-span-5">
-            <p className="eyebrow-gold">Adrian Vance</p>
+            <p className="eyebrow-gold">He lives in London.</p>
             <h3 className="display-md mt-6 max-w-md">
               Music, drawn slowly from silence.
             </h3>
@@ -47,7 +47,7 @@ export function SiteFooter() {
         </div>
 
         <div className="mt-24 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between gap-4 text-[11px] tracking-[0.22em] uppercase text-white/50">
-          <span>© {new Date().getFullYear()} Adrian Vance</span>
+          <span>© {new Date().getFullYear()} He lives in London.</span>
           <span>All rights reserved · Crafted with restraint</span>
         </div>
       </div>

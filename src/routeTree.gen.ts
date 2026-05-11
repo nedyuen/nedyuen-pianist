@@ -9,8 +9,50 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as VideosRouteImport } from './routes/videos'
+import { Route as ScheduleRouteImport } from './routes/schedule'
+import { Route as RepertoireRouteImport } from './routes/repertoire'
+import { Route as PressRouteImport } from './routes/press'
+import { Route as GalleryRouteImport } from './routes/gallery'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as BiographyRouteImport } from './routes/biography'
 import { Route as IndexRouteImport } from './routes/index'
 
+const VideosRoute = VideosRouteImport.update({
+  id: '/videos',
+  path: '/videos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ScheduleRoute = ScheduleRouteImport.update({
+  id: '/schedule',
+  path: '/schedule',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RepertoireRoute = RepertoireRouteImport.update({
+  id: '/repertoire',
+  path: '/repertoire',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PressRoute = PressRouteImport.update({
+  id: '/press',
+  path: '/press',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GalleryRoute = GalleryRouteImport.update({
+  id: '/gallery',
+  path: '/gallery',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BiographyRoute = BiographyRouteImport.update({
+  id: '/biography',
+  path: '/biography',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +61,130 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/biography': typeof BiographyRoute
+  '/contact': typeof ContactRoute
+  '/gallery': typeof GalleryRoute
+  '/press': typeof PressRoute
+  '/repertoire': typeof RepertoireRoute
+  '/schedule': typeof ScheduleRoute
+  '/videos': typeof VideosRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/biography': typeof BiographyRoute
+  '/contact': typeof ContactRoute
+  '/gallery': typeof GalleryRoute
+  '/press': typeof PressRoute
+  '/repertoire': typeof RepertoireRoute
+  '/schedule': typeof ScheduleRoute
+  '/videos': typeof VideosRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/biography': typeof BiographyRoute
+  '/contact': typeof ContactRoute
+  '/gallery': typeof GalleryRoute
+  '/press': typeof PressRoute
+  '/repertoire': typeof RepertoireRoute
+  '/schedule': typeof ScheduleRoute
+  '/videos': typeof VideosRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/biography'
+    | '/contact'
+    | '/gallery'
+    | '/press'
+    | '/repertoire'
+    | '/schedule'
+    | '/videos'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/biography'
+    | '/contact'
+    | '/gallery'
+    | '/press'
+    | '/repertoire'
+    | '/schedule'
+    | '/videos'
+  id:
+    | '__root__'
+    | '/'
+    | '/biography'
+    | '/contact'
+    | '/gallery'
+    | '/press'
+    | '/repertoire'
+    | '/schedule'
+    | '/videos'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  BiographyRoute: typeof BiographyRoute
+  ContactRoute: typeof ContactRoute
+  GalleryRoute: typeof GalleryRoute
+  PressRoute: typeof PressRoute
+  RepertoireRoute: typeof RepertoireRoute
+  ScheduleRoute: typeof ScheduleRoute
+  VideosRoute: typeof VideosRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/videos': {
+      id: '/videos'
+      path: '/videos'
+      fullPath: '/videos'
+      preLoaderRoute: typeof VideosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/schedule': {
+      id: '/schedule'
+      path: '/schedule'
+      fullPath: '/schedule'
+      preLoaderRoute: typeof ScheduleRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/repertoire': {
+      id: '/repertoire'
+      path: '/repertoire'
+      fullPath: '/repertoire'
+      preLoaderRoute: typeof RepertoireRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/press': {
+      id: '/press'
+      path: '/press'
+      fullPath: '/press'
+      preLoaderRoute: typeof PressRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gallery': {
+      id: '/gallery'
+      path: '/gallery'
+      fullPath: '/gallery'
+      preLoaderRoute: typeof GalleryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/biography': {
+      id: '/biography'
+      path: '/biography'
+      fullPath: '/biography'
+      preLoaderRoute: typeof BiographyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,7 +197,24 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  BiographyRoute: BiographyRoute,
+  ContactRoute: ContactRoute,
+  GalleryRoute: GalleryRoute,
+  PressRoute: PressRoute,
+  RepertoireRoute: RepertoireRoute,
+  ScheduleRoute: ScheduleRoute,
+  VideosRoute: VideosRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}

@@ -1,5 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { useEffect, useState } from "react";
 import { PageShell } from "@/components/site/PageShell";
+import { supabase } from "@/integrations/supabase/client";
 import heroStage from "@/assets/hero-stage.jpg";
 import handsKeys from "@/assets/hands-keys.jpg";
 import concertHall from "@/assets/concert-hall.jpg";

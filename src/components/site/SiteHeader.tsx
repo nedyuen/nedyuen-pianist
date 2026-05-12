@@ -41,7 +41,7 @@ export function SiteHeader({ overlay = false }: { overlay?: boolean }) {
       <div className="mx-auto max-w-[1600px] px-6 md:px-12 h-20 flex items-center justify-between">
         <Link to="/" className="flex items-baseline gap-3 group">
           <span className="font-serif text-2xl tracking-tight">Ned Yuen</span>
-          <span className="hidden md:inline text-[10px] tracking-[0.35em] uppercase opacity-60">Pianist</span>
+          <span className="hidden md:inline text-[10px] tracking-[0.35em] uppercase opacity-60">Classical Pianist</span>
         </Link>
 
         <nav className="hidden lg:flex items-center gap-9">

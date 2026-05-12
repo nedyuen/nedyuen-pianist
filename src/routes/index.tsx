@@ -44,7 +44,7 @@ function HomePage() {
         <div className="absolute inset-0 vignette" />
 
         <div className="relative z-10 h-full mx-auto max-w-[1600px] px-6 md:px-12 flex flex-col justify-end pb-24 md:pb-32 text-[color:var(--ivory)]">
-          <p className="eyebrow-gold fade-in">Pianist · Recitalist · Recording Artist</p>
+          <p className="eyebrow-gold fade-in">Classical Pianist</p>
           <h1 className="display-xl mt-6 fade-up fade-delay-1">
             Ned<br />
             <span className="italic font-light">Yuen</span>

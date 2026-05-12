@@ -41,6 +41,30 @@ export type Database = {
         }
         Relationships: []
       }
+      repertoire_pieces: {
+        Row: {
+          category: string
+          composer: string
+          created_at: string
+          id: string
+          piece: string
+        }
+        Insert: {
+          category: string
+          composer: string
+          created_at?: string
+          id?: string
+          piece: string
+        }
+        Update: {
+          category?: string
+          composer?: string
+          created_at?: string
+          id?: string
+          piece?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never

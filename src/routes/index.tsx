@@ -23,12 +23,21 @@ export const Route = createFileRoute("/")({
   component: HomePage,
 });
 
-const UPCOMING = [
-  { date: "14 May 2026", city: "Vienna", venue: "Musikverein, Großer Saal", program: "Schubert · Brahms" },
-  { date: "02 Jun 2026", city: "Paris", venue: "Philharmonie de Paris", program: "Ravel · Debussy · Messiaen" },
-  { date: "21 Jun 2026", city: "London", venue: "Wigmore Hall", program: "Bach · Beethoven Op. 111" },
-  { date: "09 Jul 2026", city: "Salzburg", venue: "Festspielhaus", program: "Mozart Concerto K. 488" },
-];
+type ConcertEvent = {
+  id: string;
+  event_date: string;
+  event_name: string;
+  venue: string;
+  performance_piece: string;
+};
+
+function formatDate(iso: string) {
+  const d = new Date(iso + "T00:00:00");
+  const day = d.toLocaleDateString("en-GB", { day: "2-digit" });
+  const month = d.toLocaleDateString("en-GB", { month: "short" });
+  const year = d.getFullYear();
+  return `${day} ${month} ${year}`;
+}
 
 function HomePage() {
   return (

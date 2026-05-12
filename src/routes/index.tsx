@@ -164,15 +164,15 @@ function HomePage() {
           </div>
 
           <ul className="border-t border-border">
-            {UPCOMING.map((c) => (
+            {events.map((c) => (
               <li
-                key={c.date + c.city}
+                key={c.id}
                 className="grid grid-cols-12 gap-4 md:gap-8 py-8 md:py-10 border-b border-border group hover:bg-[color:var(--secondary)] transition-colors duration-700 -mx-6 md:-mx-12 px-6 md:px-12"
               >
-                <div className="col-span-12 md:col-span-2 text-[11px] tracking-[0.25em] uppercase text-muted-foreground pt-2">{c.date}</div>
-                <div className="col-span-7 md:col-span-3"><h3 className="font-serif text-2xl md:text-3xl">{c.city}</h3></div>
+                <div className="col-span-12 md:col-span-2 text-[11px] tracking-[0.25em] uppercase text-muted-foreground pt-2">{formatDate(c.event_date)}</div>
+                <div className="col-span-7 md:col-span-3"><h3 className="font-serif text-2xl md:text-3xl">{c.event_name}</h3></div>
                 <div className="col-span-12 md:col-span-4 text-sm leading-relaxed">{c.venue}</div>
-                <div className="col-span-5 md:col-span-3 text-sm italic text-muted-foreground text-right md:text-left">{c.program}</div>
+                <div className="col-span-5 md:col-span-3 text-sm italic text-muted-foreground text-right md:text-left">{c.performance_piece}</div>
               </li>
             ))}
           </ul>

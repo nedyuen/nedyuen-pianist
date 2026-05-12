@@ -1,5 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { useEffect, useState } from "react";
 import { PageShell } from "@/components/site/PageShell";
+import { supabase } from "@/integrations/supabase/client";
 import heroStage from "@/assets/hero-stage.jpg";
 import handsKeys from "@/assets/hands-keys.jpg";
 import concertHall from "@/assets/concert-hall.jpg";
@@ -21,14 +23,34 @@ export const Route = createFileRoute("/")({
   component: HomePage,
 });
 
-const UPCOMING = [
-  { date: "14 May 2026", city: "Vienna", venue: "Musikverein, Großer Saal", program: "Schubert · Brahms" },
-  { date: "02 Jun 2026", city: "Paris", venue: "Philharmonie de Paris", program: "Ravel · Debussy · Messiaen" },
-  { date: "21 Jun 2026", city: "London", venue: "Wigmore Hall", program: "Bach · Beethoven Op. 111" },
-  { date: "09 Jul 2026", city: "Salzburg", venue: "Festspielhaus", program: "Mozart Concerto K. 488" },
-];
+type ConcertEvent = {
+  id: string;
+  event_date: string;
+  event_name: string;
+  venue: string;
+  performance_piece: string;
+};
+
+function formatDate(iso: string) {
+  const d = new Date(iso + "T00:00:00");
+  const day = d.toLocaleDateString("en-GB", { day: "2-digit" });
+  const month = d.toLocaleDateString("en-GB", { month: "short" });
+  const year = d.getFullYear();
+  return `${day} ${month} ${year}`;
+}
 
 function HomePage() {
+  const [events, setEvents] = useState<ConcertEvent[]>([]);
+
+  useEffect(() => {
+    supabase
+      .from("concert_events")
+      .select("*")
+      .order("event_date", { ascending: false })
+      .limit(4)
+      .then(({ data }) => setEvents((data as ConcertEvent[]) ?? []));
+  }, []);
+
   return (
     <PageShell overlay>
       {/* HERO */}
@@ -142,15 +164,15 @@ function HomePage() {
           </div>
 
           <ul className="border-t border-border">
-            {UPCOMING.map((c) => (
+            {events.map((c) => (
               <li
-                key={c.date + c.city}
+                key={c.id}
                 className="grid grid-cols-12 gap-4 md:gap-8 py-8 md:py-10 border-b border-border group hover:bg-[color:var(--secondary)] transition-colors duration-700 -mx-6 md:-mx-12 px-6 md:px-12"
               >
-                <div className="col-span-12 md:col-span-2 text-[11px] tracking-[0.25em] uppercase text-muted-foreground pt-2">{c.date}</div>
-                <div className="col-span-7 md:col-span-3"><h3 className="font-serif text-2xl md:text-3xl">{c.city}</h3></div>
+                <div className="col-span-12 md:col-span-2 text-[11px] tracking-[0.25em] uppercase text-muted-foreground pt-2">{formatDate(c.event_date)}</div>
+                <div className="col-span-7 md:col-span-3"><h3 className="font-serif text-2xl md:text-3xl">{c.event_name}</h3></div>
                 <div className="col-span-12 md:col-span-4 text-sm leading-relaxed">{c.venue}</div>
-                <div className="col-span-5 md:col-span-3 text-sm italic text-muted-foreground text-right md:text-left">{c.program}</div>
+                <div className="col-span-5 md:col-span-3 text-sm italic text-muted-foreground text-right md:text-left">{c.performance_piece}</div>
               </li>
             ))}
           </ul>

@@ -40,6 +40,17 @@ function formatDate(iso: string) {
 }
 
 function HomePage() {
+  const [events, setEvents] = useState<ConcertEvent[]>([]);
+
+  useEffect(() => {
+    supabase
+      .from("concert_events")
+      .select("*")
+      .order("event_date", { ascending: false })
+      .limit(4)
+      .then(({ data }) => setEvents((data as ConcertEvent[]) ?? []));
+  }, []);
+
   return (
     <PageShell overlay>
       {/* HERO */}

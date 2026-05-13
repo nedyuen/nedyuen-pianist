@@ -29,24 +29,34 @@ const AWARDS = [
 ];
 
 function PressPage() {
+  const [quotes, setQuotes] = useState<PressQuote[]>([]);
+
+  useEffect(() => {
+    supabase
+      .from("press_quotes")
+      .select("*")
+      .order("sort_order", { ascending: true })
+      .then(({ data }) => setQuotes((data as PressQuote[]) ?? []));
+  }, []);
+
   return (
     <PageShell>
       <PageHeader
         eyebrow="Press & Recognition"
         title="What has been written."
-        intro="A small selection of critical voices and a chronology of awards. Full reviews and press materials available on request."
+        intro="A small selection of voices from established musicians."
       />
 
       {/* Quotes */}
       <section className="py-24 md:py-36">
         <div className="mx-auto max-w-[1300px] px-6 md:px-12 space-y-28 md:space-y-40">
-          {QUOTES.map((q, i) => (
-            <figure key={i} className={i % 2 === 0 ? "md:pr-24" : "md:pl-24 md:text-right"}>
+          {quotes.map((q, i) => (
+            <figure key={q.id} className={i % 2 === 0 ? "md:pr-24" : "md:pl-24 md:text-right"}>
               <blockquote className="quote-xl">“{q.text}”</blockquote>
               <figcaption className="mt-10 flex items-center gap-4 text-[11px] tracking-[0.3em] uppercase text-muted-foreground"
                 style={{ justifyContent: i % 2 === 0 ? "flex-start" : "flex-end" }}>
                 <span className="h-px w-10 bg-[color:var(--gold)]" />
-                <span>{q.source} · {q.city}</span>
+                <span>{q.source}</span>
               </figcaption>
             </figure>
           ))}

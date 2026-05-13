@@ -41,6 +41,30 @@ export type Database = {
         }
         Relationships: []
       }
+      press_quotes: {
+        Row: {
+          created_at: string
+          id: string
+          sort_order: number
+          source: string
+          text: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          sort_order?: number
+          source: string
+          text: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          sort_order?: number
+          source?: string
+          text?: string
+        }
+        Relationships: []
+      }
       repertoire_pieces: {
         Row: {
           category: string

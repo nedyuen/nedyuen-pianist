@@ -1,5 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useEffect, useState } from "react";
 import { PageShell, PageHeader } from "@/components/site/PageShell";
+import { supabase } from "@/integrations/supabase/client";
+
+type PressQuote = { id: string; source: string; text: string };
 
 export const Route = createFileRoute("/press")({
   head: () => ({

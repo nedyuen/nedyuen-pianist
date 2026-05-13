@@ -22,8 +22,8 @@ function BiographyPage() {
     <PageShell>
       <PageHeader
         eyebrow="Biography"
-        title="Awards and accolades."
-        intro="A journey from early competition success to television acclaim and community contribution."
+        title="Biography."
+        intro="Training, competitions, broadcast appearances, and ensemble work."
       />
 
       <section className="py-24 md:py-32">
@@ -52,9 +52,8 @@ function BiographyPage() {
 
           <article className="col-span-12 md:col-span-8 space-y-8 max-w-2xl">
             <p className="font-serif italic text-2xl md:text-3xl leading-snug text-foreground">
-              Ned Yuen is one of the most quietly compelling pianists of his generation —
-              an artist whose performances combine architectural precision with a
-              luminous, almost speaking interior voice.
+              Ned Yuen is a classical pianist based in the UK, with over two decades of
+              performance experience across solo, chamber, and concerto repertoire.
             </p>
 
             <p className="body-lg">

@@ -21,8 +21,8 @@ function ContactPage() {
     <PageShell>
       <PageHeader
         eyebrow="Contact"
-        title="In correspondence."
-        intro="For management, bookings, and press, the relevant contacts are below. For everything else, the form is read."
+        title="Contact."
+        intro="Management, booking, and press contacts are listed below. For anything else, use the form."
       />
 
       <section className="py-24 md:py-32">
@@ -75,12 +75,12 @@ function ContactPage() {
           {/* Form */}
           <div className="col-span-12 md:col-span-7 md:col-start-6">
             <p className="eyebrow-gold">General Enquiries</p>
-            <h2 className="display-md mt-6">Write a note.</h2>
+            <h2 className="display-md mt-6">Send a message.</h2>
 
             {sent ? (
               <div className="mt-16 py-20 border-t border-border">
                 <p className="font-serif italic text-2xl md:text-3xl max-w-xl">
-                  Thank you — your message has been received. A reply will follow in due course.
+                  Thanks — your message has been received. You'll get a reply soon.
                 </p>
               </div>
             ) : (

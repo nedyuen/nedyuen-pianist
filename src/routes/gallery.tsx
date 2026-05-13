@@ -45,8 +45,8 @@ function GalleryPage() {
     <PageShell>
       <PageHeader
         eyebrow="Gallery"
-        title="Stages, silences, in passing."
-        intro="A small archive — photographs from rehearsals, recitals, and the long quiet hours between."
+        title="Gallery."
+        intro="Photographs from rehearsals, recitals, and performances."
       />
 
       <section className="py-20 md:py-28">

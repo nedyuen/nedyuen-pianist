@@ -72,8 +72,7 @@ function HomePage() {
             <span className="italic font-light">Yuen</span>
           </h1>
           <p className="mt-10 max-w-xl text-base md:text-lg font-light leading-relaxed text-white/85 fade-up fade-delay-2">
-            A pianist of restrained intensity and architectural clarity — known for performances
-            that find stillness inside the great Romantic and modern repertoire.
+            Classical pianist performing solo, concerto, and chamber repertoire across the UK and internationally.
           </p>
 
           <div className="mt-14 flex flex-wrap items-center gap-x-10 gap-y-4 fade-up fade-delay-3">
@@ -100,9 +99,8 @@ function HomePage() {
           </div>
           <div className="col-span-12 md:col-span-9">
             <p className="quote-xl max-w-4xl">
-              I am drawn to the silences between notes — the breath the music takes before
-              it sings. To play is not to perform; it is to listen, very carefully, to
-              centuries of voices, and to let them through.
+              I play to bring the score to life as honestly as I can — listening closely,
+              and letting the music speak on its own terms.
             </p>
             <p className="mt-10 text-sm tracking-[0.28em] uppercase text-muted-foreground">— Ned Yuen</p>
           </div>
@@ -157,8 +155,7 @@ function HomePage() {
             </div>
             <div className="col-span-12 md:col-span-7 md:col-start-6 flex items-end">
               <p className="body-lg">
-                A year of return: Vienna, Paris, London, Salzburg. Concerti with the
-                Wiener Symphoniker and the Orchestre de Paris; recitals across Europe and North America.
+                Recent and upcoming concerts, recitals, and festival appearances.
               </p>
             </div>
           </div>
@@ -247,7 +244,7 @@ function HomePage() {
       <section className="section-dark py-28 md:py-40">
         <div className="mx-auto max-w-[1400px] px-6 md:px-12">
           <p className="eyebrow-gold">Distinctions</p>
-          <h2 className="display-md mt-6 max-w-2xl">A quiet record of recognition.</h2>
+          <h2 className="display-md mt-6 max-w-2xl">Awards and prizes.</h2>
 
           <div className="mt-20 grid grid-cols-1 md:grid-cols-4 gap-12">
             {[

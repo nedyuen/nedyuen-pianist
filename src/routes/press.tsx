@@ -39,8 +39,8 @@ function PressPage() {
     <PageShell>
       <PageHeader
         eyebrow="Press & Recognition"
-        title="What has been written."
-        intro="A small selection of voices from established musicians."
+        title="Press & recognition."
+        intro="Quotes from established musicians on Ned's performances."
       />
 
       {/* Quotes */}
@@ -63,7 +63,7 @@ function PressPage() {
       <section className="section-dark py-28 md:py-40">
         <div className="mx-auto max-w-[1300px] px-6 md:px-12">
           <p className="eyebrow-gold">Distinctions</p>
-          <h2 className="display-md mt-6 max-w-2xl">A chronology, briefly.</h2>
+          <h2 className="display-md mt-6 max-w-2xl">Awards and prizes.</h2>
 
           <ul className="mt-20 relative">
             <span className="absolute left-[80px] md:left-[120px] top-0 bottom-0 w-px bg-white/15" aria-hidden />

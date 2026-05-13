@@ -17,14 +17,6 @@ export const Route = createFileRoute("/press")({
   component: PressPage,
 });
 
-const QUOTES = [
-  { text: "A pianist of unusual imagination and rare intelligence — Vance plays as though he is uncovering the music for the first time, and inviting us to do the same.", source: "The Times", city: "London" },
-  { text: "Few pianists alive can hold a Schubert silence the way Vance does — as if the room itself were thinking.", source: "Le Monde", city: "Paris" },
-  { text: "An interpreter of unmistakable authority. Every phrase feels considered, never careful.", source: "The New York Times", city: "New York" },
-  { text: "What he draws from the instrument is not virtuosity but conversation — between composer, instrument, and listener.", source: "Frankfurter Allgemeine", city: "Frankfurt" },
-  { text: "His Brahms is autumnal, inward, deeply personal — a recording one returns to.", source: "Gramophone", city: "London" },
-];
-
 const AWARDS = [
   { year: "2024", title: "Gramophone Award", sub: "Solo Recording of the Year — Brahms Op. 116–119" },
   { year: "2024", title: "Diapason d’Or de l’année", sub: "France · Brahms Album" },

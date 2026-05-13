@@ -61,8 +61,8 @@ function RepertoirePage() {
     <PageShell>
       <PageHeader
         eyebrow="Repertoire"
-        title="A working library."
-        intro="The repertoire below is current rather than complete — works actively in rotation across recital, concerto, and chamber programmes."
+        title="Repertoire."
+        intro="Works currently in rotation across solo, concerto, and chamber programmes."
       />
 
       <section className="py-24 md:py-32 bg-[color:var(--secondary)]">

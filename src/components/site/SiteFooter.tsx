@@ -8,7 +8,7 @@ export function SiteFooter() {
           <div className="md:col-span-5">
             <p className="eyebrow-gold">Ned Yuen</p>
             <h3 className="display-md mt-6 max-w-md">
-              Music, drawn slowly from silence.
+              Concert pianist.
             </h3>
             <div className="gold-rule mt-8" />
           </div>
@@ -48,7 +48,7 @@ export function SiteFooter() {
 
         <div className="mt-24 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between gap-4 text-[11px] tracking-[0.22em] uppercase text-white/50">
           <span>© {new Date().getFullYear()} Ned Yuen</span>
-          <span>All rights reserved · Crafted with restraint</span>
+          <span>All rights reserved</span>
         </div>
       </div>
     </footer>

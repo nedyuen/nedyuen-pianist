@@ -42,8 +42,8 @@ function VideosPage() {
     <PageShell>
       <PageHeader
         eyebrow="Performances"
-        title="On record, on stage."
-        intro="A selection of live and studio performances — newly added recordings appear at the top."
+        title="Performances."
+        intro="Live and studio recordings. Newest at the top."
       />
 
       {/* FEATURED */}

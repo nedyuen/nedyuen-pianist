@@ -73,8 +73,8 @@ function SchedulePage() {
     <PageShell>
       <PageHeader
         eyebrow="Schedule"
-        title="Where the music goes."
-        intro="A record of concerts, recitals, and appearances."
+        title="Schedule."
+        intro="Concerts, recitals, and appearances."
       />
 
       <section className="py-24 md:py-32">

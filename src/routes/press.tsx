@@ -1,5 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useEffect, useState } from "react";
 import { PageShell, PageHeader } from "@/components/site/PageShell";
+import { supabase } from "@/integrations/supabase/client";
+
+type PressQuote = { id: string; source: string; text: string };
 
 export const Route = createFileRoute("/press")({
   head: () => ({
@@ -13,14 +17,6 @@ export const Route = createFileRoute("/press")({
   component: PressPage,
 });
 
-const QUOTES = [
-  { text: "A pianist of unusual imagination and rare intelligence — Vance plays as though he is uncovering the music for the first time, and inviting us to do the same.", source: "The Times", city: "London" },
-  { text: "Few pianists alive can hold a Schubert silence the way Vance does — as if the room itself were thinking.", source: "Le Monde", city: "Paris" },
-  { text: "An interpreter of unmistakable authority. Every phrase feels considered, never careful.", source: "The New York Times", city: "New York" },
-  { text: "What he draws from the instrument is not virtuosity but conversation — between composer, instrument, and listener.", source: "Frankfurter Allgemeine", city: "Frankfurt" },
-  { text: "His Brahms is autumnal, inward, deeply personal — a recording one returns to.", source: "Gramophone", city: "London" },
-];
-
 const AWARDS = [
   { year: "2024", title: "Gramophone Award", sub: "Solo Recording of the Year — Brahms Op. 116–119" },
   { year: "2024", title: "Diapason d’Or de l’année", sub: "France · Brahms Album" },
@@ -33,24 +29,34 @@ const AWARDS = [
 ];
 
 function PressPage() {
+  const [quotes, setQuotes] = useState<PressQuote[]>([]);
+
+  useEffect(() => {
+    supabase
+      .from("press_quotes")
+      .select("*")
+      .order("sort_order", { ascending: true })
+      .then(({ data }) => setQuotes((data as PressQuote[]) ?? []));
+  }, []);
+
   return (
     <PageShell>
       <PageHeader
         eyebrow="Press & Recognition"
         title="What has been written."
-        intro="A small selection of critical voices and a chronology of awards. Full reviews and press materials available on request."
+        intro="A small selection of voices from established musicians."
       />
 
       {/* Quotes */}
       <section className="py-24 md:py-36">
         <div className="mx-auto max-w-[1300px] px-6 md:px-12 space-y-28 md:space-y-40">
-          {QUOTES.map((q, i) => (
-            <figure key={i} className={i % 2 === 0 ? "md:pr-24" : "md:pl-24 md:text-right"}>
+          {quotes.map((q, i) => (
+            <figure key={q.id} className={i % 2 === 0 ? "md:pr-24" : "md:pl-24 md:text-right"}>
               <blockquote className="quote-xl">“{q.text}”</blockquote>
               <figcaption className="mt-10 flex items-center gap-4 text-[11px] tracking-[0.3em] uppercase text-muted-foreground"
                 style={{ justifyContent: i % 2 === 0 ? "flex-start" : "flex-end" }}>
                 <span className="h-px w-10 bg-[color:var(--gold)]" />
-                <span>{q.source} · {q.city}</span>
+                <span>{q.source}</span>
               </figcaption>
             </figure>
           ))}

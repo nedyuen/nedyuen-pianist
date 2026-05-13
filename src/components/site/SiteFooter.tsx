@@ -8,7 +8,7 @@ export function SiteFooter() {
           <div className="md:col-span-5">
             <p className="eyebrow-gold">Ned Yuen</p>
             <h3 className="display-md mt-6 max-w-md">
-              Concert pianist.
+              Classical pianist.
             </h3>
             <div className="gold-rule mt-8" />
           </div>

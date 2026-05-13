@@ -14,6 +14,33 @@ export type Database = {
   }
   public: {
     Tables: {
+      awards: {
+        Row: {
+          created_at: string
+          id: string
+          sort_order: number
+          subtitle: string
+          title: string
+          year: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          sort_order?: number
+          subtitle: string
+          title: string
+          year: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          sort_order?: number
+          subtitle?: string
+          title?: string
+          year?: string
+        }
+        Relationships: []
+      }
       concert_events: {
         Row: {
           created_at: string

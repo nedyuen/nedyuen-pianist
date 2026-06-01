@@ -22,5 +22,12 @@ export default defineConfig({
     // @cloudflare/vite-plugin builds from this — wrangler.jsonc main alone is insufficient.
     server: { entry: "server" },
   },
+  vite: {
+    server: {
+      hmr: {
+        overlay: false,
+      },
+    },
+  },
   plugins: isVercel ? nitro({ preset: "vercel" }) : [],
 });

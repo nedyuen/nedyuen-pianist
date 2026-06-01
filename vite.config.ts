@@ -16,11 +16,10 @@ import { nitro } from "nitro/vite";
 const isVercel = process.env.BUILD_TARGET === "vercel" || !!process.env.VERCEL;
 
 export default defineConfig({
-  cloudflare: isVercel ? false : undefined,
   tanstackStart: {
     // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
     // @cloudflare/vite-plugin builds from this — wrangler.jsonc main alone is insufficient.
     server: { entry: "server" },
   },
-  plugins: isVercel ? nitro({ preset: "vercel" }) : [],
+  plugins: isVercel ? [nitro({ preset: "vercel" })] : [],
 });

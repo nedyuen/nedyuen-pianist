@@ -2,6 +2,16 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { PageShell, PageHeader } from "@/components/site/PageShell";
 import { X } from "lucide-react";
+import g1 from "@/assets/gallery-1.jpg";
+import g2 from "@/assets/gallery-2.jpg";
+import g3 from "@/assets/gallery-3.jpg";
+import g4 from "@/assets/gallery-4.jpg";
+import g5 from "@/assets/gallery-5.jpg";
+import g6 from "@/assets/gallery-6.jpg";
+import hall from "@/assets/concert-hall.jpg";
+import hands from "@/assets/hands-keys.jpg";
+import hero from "@/assets/hero-stage.jpg";
+import portrait from "@/assets/portrait-main.jpg";
 
 export const Route = createFileRoute("/gallery")({
   head: () => ({
@@ -15,61 +25,18 @@ export const Route = createFileRoute("/gallery")({
   component: GalleryPage,
 });
 
-const IMAGE_URLS: string[] = [
-  "https://i.postimg.cc/Dm8FN7rD/A1.jpg",
-  "https://i.postimg.cc/V5d1hzqx/A2.jpg",
-  "https://i.postimg.cc/5j61rf5c/A3.jpg",
-  "https://i.postimg.cc/v1N2xw47/B1.jpg",
-  "https://i.postimg.cc/NyzC2vK6/B2.jpg",
-  "https://i.postimg.cc/v1N2xw4L/B3.jpg",
-  "https://i.postimg.cc/xJNxKpmJ/B4.jpg",
-  "https://i.postimg.cc/sQG6pHWG/B5.jpg",
-  "https://i.postimg.cc/zbHtn2hg/B6.jpg",
-  "https://i.postimg.cc/zbHtn2hK/B7.jpg",
-  "https://i.postimg.cc/XGBHw158/B8.jpg",
-  "https://i.postimg.cc/BLPYx7F2/B9.jpg",
-  "https://i.postimg.cc/8JfKhXvB/B10.jpg",
-  "https://i.postimg.cc/TL57rNbc/C1.jpg",
-  "https://i.postimg.cc/qh6b8DKj/C2-092018.jpg",
-  "https://i.postimg.cc/JDH6bYXT/C3-092018.jpg",
-  "https://i.postimg.cc/hzQy9Zm3/C4-112018.jpg",
-  "https://i.postimg.cc/tZnShv6S/C5-122019.jpg",
-  "https://i.postimg.cc/JDH6bYXY/C6-092021.jpg",
-  "https://i.postimg.cc/MMfPy3Rk/C7.jpg",
-  "https://i.postimg.cc/Vr0GjZMP/C8.jpg",
-  "https://i.postimg.cc/Hc8ZQvMf/D1.jpg",
-  "https://i.postimg.cc/xJNxKpHD/D2.jpg",
-  "https://i.postimg.cc/wRKWF554/D3.jpg",
-  "https://i.postimg.cc/GT0MzPPV/D4.jpg",
-  "https://i.postimg.cc/SY0ZVLL5/D5.jpg",
-  "https://i.postimg.cc/jnV8v6Q0/D6.jpg",
-  "https://i.postimg.cc/64sHzVVk/E1.jpg",
-  "https://i.postimg.cc/YLcX8NfM/E2.jpg",
-  "https://i.postimg.cc/BPWhN5cs/E3.jpg",
-  "https://i.postimg.cc/4HC8wvbX/F1.jpg",
-  "https://i.postimg.cc/hQFCM8bD/F2.jpg",
-  "https://i.postimg.cc/xNrsgGyk/F3.jpg",
-  "https://i.postimg.cc/PvG6Kbzp/F4.jpg",
-  "https://i.postimg.cc/y3qfnhXd/F5.jpg",
-  "https://i.postimg.cc/Cnjc2Zmw/F6.jpg",
-  "https://i.postimg.cc/dZ85f74V/F7.jpg",
-  "https://i.postimg.cc/JHbpFyPt/F8.jpg",
-  "https://i.postimg.cc/BPxmz8Mj/F9.jpg",
-  "https://i.postimg.cc/Mfy9Lcdj/G1.jpg",
-  "https://i.postimg.cc/XBwsPZQ9/G2.jpg",
-  "https://i.postimg.cc/4HzW0KBH/G3.jpg",
-  "https://i.postimg.cc/fSx8P3BX/G4.jpg",
-  "https://i.postimg.cc/SYWgPXD7/G5.jpg",
-  "https://i.postimg.cc/xNK6ZktP/G6.jpg",
-  "https://i.postimg.cc/XBwsPZQx/G7.jpg",
-  "https://i.postimg.cc/xqHp87YB/G8.jpg",
-  "https://i.postimg.cc/RJcgY3Xg/G9.jpg",
+const IMAGES: { src: string; alt: string; caption: string; ratio: string }[] = [
+  { src: hero, alt: "Grand piano under a single spotlight", caption: "Musikverein · Vienna, 2024", ratio: "aspect-[3/4]" },
+  { src: g1, alt: "Pianist on stage", caption: "La Scala · Milan, 2023", ratio: "aspect-[3/4]" },
+  { src: hands, alt: "Hands on piano keys", caption: "Studio · Berlin, 2024", ratio: "aspect-[4/3]" },
+  { src: g3, alt: "Open piano with warm light", caption: "Aldeburgh, Snape Maltings, 2024", ratio: "aspect-[16/11]" },
+  { src: g2, alt: "Profile portrait", caption: "London, 2024", ratio: "aspect-[4/5]" },
+  { src: portrait, alt: "Portrait at the Steinway", caption: "Hamburg · Steinway, 2025", ratio: "aspect-[3/4]" },
+  { src: hall, alt: "Empty European concert hall", caption: "Teatro alla Scala, 2023", ratio: "aspect-[16/9]" },
+  { src: g5, alt: "Sheet music under a lamp", caption: "Backstage · Paris, 2024", ratio: "aspect-[5/6]" },
+  { src: g4, alt: "Pianist taking a bow", caption: "Carnegie Hall · New York, 2025", ratio: "aspect-[4/5]" },
+  { src: g6, alt: "Pianist in profile in low light", caption: "Tonhalle · Zürich, 2023", ratio: "aspect-[7/6]" },
 ];
-
-const IMAGES: { src: string; alt: string }[] = IMAGE_URLS.map((src, i) => ({
-  src,
-  alt: `Gallery image ${i + 1}`,
-}));
 
 function GalleryPage() {
   const [active, setActive] = useState<number | null>(null);
@@ -96,10 +63,13 @@ function GalleryPage() {
                     src={img.src}
                     alt={img.alt}
                     loading="lazy"
-                    className="w-full h-auto object-cover transition-transform duration-[1800ms] group-hover:scale-[1.05]"
+                    className={`w-full ${img.ratio} object-cover transition-transform duration-[1800ms] group-hover:scale-[1.05]`}
                   />
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/15 transition-colors duration-700" />
                 </div>
+                <p className="mt-3 text-[10px] tracking-[0.3em] uppercase text-muted-foreground text-left">
+                  {img.caption}
+                </p>
               </button>
             ))}
           </div>
@@ -122,8 +92,11 @@ function GalleryPage() {
             <img
               src={IMAGES[active].src}
               alt={IMAGES[active].alt}
-              className="max-w-[90vw] max-h-[85vh] object-contain"
+              className="max-w-[90vw] max-h-[80vh] object-contain"
             />
+            <figcaption className="mt-5 text-center text-[10px] tracking-[0.3em] uppercase text-white/65">
+              {IMAGES[active].caption}
+            </figcaption>
           </figure>
         </div>
       )}

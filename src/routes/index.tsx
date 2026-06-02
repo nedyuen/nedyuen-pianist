@@ -3,12 +3,7 @@ import { useEffect, useState } from "react";
 import { PageShell } from "@/components/site/PageShell";
 import { supabase } from "@/integrations/supabase/client";
 import heroStage from "@/assets/hero-stage.jpg";
-import handsKeys from "@/assets/hands-keys.jpg";
 import concertHall from "@/assets/concert-hall.jpg";
-import portraitMain from "@/assets/portrait-main.jpg";
-import gallery1 from "@/assets/gallery-1.jpg";
-import gallery3 from "@/assets/gallery-3.jpg";
-import gallery5 from "@/assets/gallery-5.jpg";
 import { Play } from "lucide-react";
 
 export const Route = createFileRoute("/")({

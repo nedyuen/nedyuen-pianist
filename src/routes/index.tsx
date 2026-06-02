@@ -99,8 +99,10 @@ function HomePage() {
           </div>
           <div className="col-span-12 md:col-span-9">
             <p className="quote-xl max-w-4xl">
-              I play to bring the score to life as honestly as I can — listening closely,
-              and letting the music speak on its own terms.
+              I approach music as a pursuit of refinement — identifying imperfections,
+              tracing them to their source, experimenting with different solutions, and
+              steadily shaping each passage toward clarity and intention, much like
+              solving a complex problem in professional practice.
             </p>
             <p className="mt-10 text-sm tracking-[0.28em] uppercase text-muted-foreground">— Ned Yuen</p>
           </div>

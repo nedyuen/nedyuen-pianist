@@ -1,17 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { PageShell, PageHeader } from "@/components/site/PageShell";
-import { X } from "lucide-react";
-import g1 from "@/assets/gallery-1.jpg";
-import g2 from "@/assets/gallery-2.jpg";
-import g3 from "@/assets/gallery-3.jpg";
-import g4 from "@/assets/gallery-4.jpg";
-import g5 from "@/assets/gallery-5.jpg";
-import g6 from "@/assets/gallery-6.jpg";
-import hall from "@/assets/concert-hall.jpg";
-import hands from "@/assets/hands-keys.jpg";
-import hero from "@/assets/hero-stage.jpg";
-import portrait from "@/assets/portrait-main.jpg";
+import { X, ChevronLeft, ChevronRight } from "lucide-react";
 
 export const Route = createFileRoute("/gallery")({
   head: () => ({
@@ -25,21 +15,72 @@ export const Route = createFileRoute("/gallery")({
   component: GalleryPage,
 });
 
-const IMAGES: { src: string; alt: string; caption: string; ratio: string }[] = [
-  { src: hero, alt: "Grand piano under a single spotlight", caption: "Musikverein · Vienna, 2024", ratio: "aspect-[3/4]" },
-  { src: g1, alt: "Pianist on stage", caption: "La Scala · Milan, 2023", ratio: "aspect-[3/4]" },
-  { src: hands, alt: "Hands on piano keys", caption: "Studio · Berlin, 2024", ratio: "aspect-[4/3]" },
-  { src: g3, alt: "Open piano with warm light", caption: "Aldeburgh, Snape Maltings, 2024", ratio: "aspect-[16/11]" },
-  { src: g2, alt: "Profile portrait", caption: "London, 2024", ratio: "aspect-[4/5]" },
-  { src: portrait, alt: "Portrait at the Steinway", caption: "Hamburg · Steinway, 2025", ratio: "aspect-[3/4]" },
-  { src: hall, alt: "Empty European concert hall", caption: "Teatro alla Scala, 2023", ratio: "aspect-[16/9]" },
-  { src: g5, alt: "Sheet music under a lamp", caption: "Backstage · Paris, 2024", ratio: "aspect-[5/6]" },
-  { src: g4, alt: "Pianist taking a bow", caption: "Carnegie Hall · New York, 2025", ratio: "aspect-[4/5]" },
-  { src: g6, alt: "Pianist in profile in low light", caption: "Tonhalle · Zürich, 2023", ratio: "aspect-[7/6]" },
+// Edit this list to add/remove images.
+const IMAGES: string[] = [
+  "https://i.postimg.cc/wjJk7S8k/A1.jpg",
+  "https://i.postimg.cc/tJxsBGzc/A2.jpg",
+  "https://i.postimg.cc/7h25KrNW/A3.jpg",
+  "https://i.postimg.cc/7h25KrNB/B1.jpg",
+  "https://i.postimg.cc/Hnyr61tv/B2.jpg",
+  "https://i.postimg.cc/7brfctBB/B3.jpg",
+  "https://i.postimg.cc/141fT7WY/B4.jpg",
+  "https://i.postimg.cc/jCYL938M/B5.jpg",
+  "https://i.postimg.cc/MXJv43sP/B6.jpg",
+  "https://i.postimg.cc/nMfC5SdW/B7.jpg",
+  "https://i.postimg.cc/3WQd6fSh/B8.jpg",
+  "https://i.postimg.cc/dDcLXNHM/B9.jpg",
+  "https://i.postimg.cc/xqVc7pxD/B10.jpg",
+  "https://i.postimg.cc/xqVc7pxV/C1.jpg",
+  "https://i.postimg.cc/s1Cv8H6R/C2-092018.jpg",
+  "https://i.postimg.cc/F1X7qCWN/C3-092018.jpg",
+  "https://i.postimg.cc/jCYL93gS/C4-112018.jpg",
+  "https://i.postimg.cc/XX6ph1Hn/C5-122019.jpg",
+  "https://i.postimg.cc/WtchKYWb/C6-092021.jpg",
+  "https://i.postimg.cc/mhWtqpXD/C7.jpg",
+  "https://i.postimg.cc/66y1fWDY/C8.jpg",
+  "https://i.postimg.cc/YjBhVDn0/D1.jpg",
+  "https://i.postimg.cc/BZXwBSdh/D2.jpg",
+  "https://i.postimg.cc/QNHnJ8R4/D3.jpg",
+  "https://i.postimg.cc/jqLk4xpV/D4.jpg",
+  "https://i.postimg.cc/dQLSjsbF/D5.jpg",
+  "https://i.postimg.cc/KcRsDG6S/D6.jpg",
+  "https://i.postimg.cc/zDVPFz99/E1.jpg",
+  "https://i.postimg.cc/QNwY4LDj/E2.jpg",
+  "https://i.postimg.cc/J7Gd5rft/E3.jpg",
+  "https://i.postimg.cc/NGSCJhtY/F1.jpg",
+  "https://i.postimg.cc/05FXWgvj/F2.jpg",
+  "https://i.postimg.cc/ZY2s7km0/F3.jpg",
+  "https://i.postimg.cc/QNwY4LDH/F4.jpg",
+  "https://i.postimg.cc/tRwvS0bR/F5.jpg",
+  "https://i.postimg.cc/G3Vg70RD/F6.jpg",
+  "https://i.postimg.cc/y6tpQqKF/F7.jpg",
+  "https://i.postimg.cc/qBSDbfrX/F8.jpg",
+  "https://i.postimg.cc/fWpq24sf/F9.jpg",
+  "https://i.postimg.cc/kXS1LjM8/G1.jpg",
+  "https://i.postimg.cc/ncmRNdVB/G2.jpg",
+  "https://i.postimg.cc/fTd21HW9/G3.jpg",
+  "https://i.postimg.cc/L6PCGy4T/G4.jpg",
+  "https://i.postimg.cc/dtCHgWQn/G5.jpg",
+  "https://i.postimg.cc/tC6S8rRv/G6.jpg",
+  "https://i.postimg.cc/qMKbWmBb/G7.jpg",
+  "https://i.postimg.cc/Qx74v6Nw/G8.jpg",
+  "https://i.postimg.cc/jdfgB8qp/G9.jpg",
 ];
 
 function GalleryPage() {
   const [active, setActive] = useState<number | null>(null);
+  const total = IMAGES.length;
+
+  const open = useCallback((i: number) => setActive(i), []);
+  const close = useCallback(() => setActive(null), []);
+  const next = useCallback(
+    () => setActive((i) => (i === null ? i : (i + 1) % total)),
+    [total],
+  );
+  const prev = useCallback(
+    () => setActive((i) => (i === null ? i : (i - 1 + total) % total)),
+    [total],
+  );
 
   return (
     <PageShell>
@@ -49,27 +90,24 @@ function GalleryPage() {
         intro="Photographs from rehearsals, recitals, and performances."
       />
 
-      <section className="py-20 md:py-28">
+      <section className="py-16 md:py-24">
         <div className="mx-auto max-w-[1600px] px-4 md:px-8">
-          <div className="columns-1 md:columns-2 lg:columns-3 gap-4 md:gap-6 [column-fill:_balance]">
-            {IMAGES.map((img, i) => (
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 md:gap-5">
+            {IMAGES.map((src, i) => (
               <button
-                key={i}
-                onClick={() => setActive(i)}
-                className="group block w-full mb-4 md:mb-6 break-inside-avoid overflow-hidden cursor-zoom-in"
+                key={src}
+                onClick={() => open(i)}
+                aria-label={`Open image ${i + 1} of ${total}`}
+                className="group relative block aspect-square overflow-hidden bg-muted cursor-zoom-in focus:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--gold,theme(colors.primary.DEFAULT))]"
               >
-                <div className="relative overflow-hidden">
-                  <img
-                    src={img.src}
-                    alt={img.alt}
-                    loading="lazy"
-                    className={`w-full ${img.ratio} object-cover transition-transform duration-[1800ms] group-hover:scale-[1.05]`}
-                  />
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/15 transition-colors duration-700" />
-                </div>
-                <p className="mt-3 text-[10px] tracking-[0.3em] uppercase text-muted-foreground text-left">
-                  {img.caption}
-                </p>
+                <img
+                  src={src}
+                  alt={`Gallery image ${i + 1}`}
+                  loading="lazy"
+                  decoding="async"
+                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-500 group-hover:shadow-2xl" />
               </button>
             ))}
           </div>
@@ -77,29 +115,150 @@ function GalleryPage() {
       </section>
 
       {active !== null && (
-        <div
-          className="fixed inset-0 z-[100] bg-[color:var(--onyx)]/97 backdrop-blur-sm flex items-center justify-center p-4 md:p-12 fade-in"
-          onClick={() => setActive(null)}
-        >
-          <button
-            onClick={() => setActive(null)}
-            aria-label="Close"
-            className="absolute top-6 right-6 text-white/80 hover:text-[color:var(--gold)] transition-colors"
-          >
-            <X size={28} strokeWidth={1} />
-          </button>
-          <figure className="max-w-[90vw] max-h-[85vh]" onClick={(e) => e.stopPropagation()}>
-            <img
-              src={IMAGES[active].src}
-              alt={IMAGES[active].alt}
-              className="max-w-[90vw] max-h-[80vh] object-contain"
-            />
-            <figcaption className="mt-5 text-center text-[10px] tracking-[0.3em] uppercase text-white/65">
-              {IMAGES[active].caption}
-            </figcaption>
-          </figure>
-        </div>
+        <Lightbox
+          images={IMAGES}
+          index={active}
+          onClose={close}
+          onNext={next}
+          onPrev={prev}
+        />
       )}
     </PageShell>
+  );
+}
+
+function Lightbox({
+  images,
+  index,
+  onClose,
+  onNext,
+  onPrev,
+}: {
+  images: string[];
+  index: number;
+  onClose: () => void;
+  onNext: () => void;
+  onPrev: () => void;
+}) {
+  const total = images.length;
+  const closeBtnRef = useRef<HTMLButtonElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  // Keyboard handling
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+      else if (e.key === "ArrowRight") onNext();
+      else if (e.key === "ArrowLeft") onPrev();
+      else if (e.key === "Tab") {
+        // Focus trap: keep focus within the modal
+        const focusables = containerRef.current?.querySelectorAll<HTMLElement>(
+          "button",
+        );
+        if (!focusables || focusables.length === 0) return;
+        const first = focusables[0];
+        const last = focusables[focusables.length - 1];
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [onClose, onNext, onPrev]);
+
+  // Lock body scroll while open
+  useEffect(() => {
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = prevOverflow;
+    };
+  }, []);
+
+  // Initial focus
+  useEffect(() => {
+    closeBtnRef.current?.focus();
+  }, []);
+
+  // Preload adjacent images
+  useEffect(() => {
+    const preload = (i: number) => {
+      const img = new Image();
+      img.src = images[i];
+    };
+    preload((index + 1) % total);
+    preload((index - 1 + total) % total);
+  }, [index, images, total]);
+
+  return (
+    <div
+      ref={containerRef}
+      role="dialog"
+      aria-modal="true"
+      aria-label={`Image ${index + 1} of ${total}`}
+      className="fixed inset-0 z-[100] bg-black/95 backdrop-blur-sm flex items-center justify-center animate-in fade-in duration-200"
+      onClick={onClose}
+    >
+      {/* Top bar */}
+      <div className="absolute top-0 left-0 right-0 flex items-center justify-between p-4 md:p-6 text-white/90 z-10">
+        <span className="text-xs md:text-sm tracking-[0.25em] uppercase tabular-nums">
+          {index + 1} / {total}
+        </span>
+        <button
+          ref={closeBtnRef}
+          onClick={(e) => {
+            e.stopPropagation();
+            onClose();
+          }}
+          aria-label="Close gallery"
+          className="rounded-full p-2 text-white/80 hover:text-white hover:bg-white/10 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
+        >
+          <X size={24} strokeWidth={1.5} />
+        </button>
+      </div>
+
+      {/* Prev */}
+      <button
+        onClick={(e) => {
+          e.stopPropagation();
+          onPrev();
+        }}
+        aria-label="Previous image"
+        className="absolute left-2 md:left-6 top-1/2 -translate-y-1/2 z-10 rounded-full p-2 md:p-3 text-white/80 hover:text-white hover:bg-white/10 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
+      >
+        <ChevronLeft size={32} strokeWidth={1.5} />
+      </button>
+
+      {/* Image */}
+      <div
+        className="relative max-w-[92vw] max-h-[85vh] flex items-center justify-center animate-in zoom-in-95 duration-200"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <img
+          key={images[index]}
+          src={images[index]}
+          alt={`Gallery image ${index + 1} of ${total}`}
+          className="max-w-[92vw] max-h-[85vh] object-contain select-none"
+          draggable={false}
+        />
+      </div>
+
+      {/* Next */}
+      <button
+        onClick={(e) => {
+          e.stopPropagation();
+          onNext();
+        }}
+        aria-label="Next image"
+        className="absolute right-2 md:right-6 top-1/2 -translate-y-1/2 z-10 rounded-full p-2 md:p-3 text-white/80 hover:text-white hover:bg-white/10 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
+      >
+        <ChevronRight size={32} strokeWidth={1.5} />
+      </button>
+    </div>
   );
 }
